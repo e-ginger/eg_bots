@@ -31,6 +31,7 @@ pip install pydub
 ### 2.1 
 Файл inbox_bot/settings_example.py скопировать с именем inbox_bot/settings.py.
 
+### 2.2
 С помощью бота @BotFather создать своего бота с любым именем, например `<ваш_ник>_inbox_bot`. BotFather вернет API-ключ. 
 
 API-ключ нужно добавить в файле inbox_bot/settings.py:
@@ -38,7 +39,7 @@ API-ключ нужно добавить в файле inbox_bot/settings.py:
 TOKEN = 'сюда вставить токен от BotFather'
 ```
 
-### 2.2
+### 2.3
 Узнать свой числовой ID в Telegram. Для этого отправить любое сообщение боту @getmyid_bot, и он автоматически покажет ваш ID.
 
 В файле inbox_bot/settings.py прописать доступ к боту. Для ADMIN_USER, ALLOWED_USERS, KNOWN_USERS вместо нуля подставить свой ID.
@@ -48,10 +49,10 @@ TOKEN = 'сюда вставить токен от BotFather'
 - KNOWN_USERS - пользователи, чье имя при сохранении пересланных сообщений будет заменяться указанным псевдонимом.
 - ALLOWED_USERS - пользователи, которым, кроме вас, разрешен доступ к боту.
 
-### 2.3
+### 2.4
 В файле inbox_bot/settings.py прописать путь к папке, куда сохранять заметки (IN_PATH).
 
-### 2.4
+### 2.5
 Скрипт eg_inbox_bot.sh сделать исполняемым: `chmod +x eg_inbox_bot.sh`.
 Запустить бота с помощью eg_inbox_bot.sh.
 
@@ -69,7 +70,7 @@ TOKEN = 'сюда вставить токен от BotFather'
 Добавить этот ключ в config.json в поле bot_token.
 
 ### 3.3
-Заполнить в config.json список моделей ai_models_list. Провайдер может быть любой OpenAI-совместимый по API. Вот пример для vsegpt: 
+Заполнить в config.json общий список моделей ai_models_list. Провайдер может быть любой OpenAI-совместимый по API. Вот пример для vsegpt: 
 ```
     {
       "name": "openai/gpt-4o-mini",
@@ -82,7 +83,9 @@ TOKEN = 'сюда вставить токен от BotFather'
       "displayName": "vsegpt gpt-4o-mini"
     },
 ```
-Это общий список моделей. По умолчанию в этот список добавлена dummy - модель-заглушка, встроенная в бот.
+По умолчанию в этот список добавлена dummy - модель-заглушка, встроенная в бот.
+Формат описания модели очень близок к Obsidian Copilot, 
+чтобы скопировать настройки моделей из {obsidan vault path}/.obsidian/plugins/copilot/data.json.
 
 ### 3.4
 Узнать свой числовой ID в Telegram. Для этого отправить любое сообщение боту @getmyid_bot, и он автоматически покажет ваш ID.
