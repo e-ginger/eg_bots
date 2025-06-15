@@ -2,3 +2,7 @@
 venv/
 inbox_bot/__pycache__/
 inbox_bot/settings.py
+personal_gpt_bot/__pycache__/
+personal_gpt_bot/chats/
+personal_gpt_bot/voice_messages/
+personal_gpt_bot/config*.json
