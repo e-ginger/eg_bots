@@ -66,8 +66,8 @@ class Chat:
         title = title[:50]
 
         # Генерируем имя файла и заполняем свойство
-        dtm = datetime.now().strftime("%Y%m%d%H%M%S")
-        self.chat_file = f"{dtm}-{title}.md"
+        dtm = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.chat_file = f"{dtm}_{title}.md"
         self.chat_file = os.path.join(self.chats_dir, self.chat_file)
 
         # frontmatter для файла
@@ -76,7 +76,7 @@ class Chat:
             model_key = self.model_config.get("name", "") + "|" + self.model_config.get("provider", "")
         else:
             model_key = ""
-        frontmatter = f"---\nepoch: {epoch}\nmodelKey: {model_key}\ntags:\n  - ainote\n---\n\n"
+        frontmatter = f"---\nepoch: {epoch}\nmodelKey: {model_key}\ntags:\n  - aichat\n---\n\n"
 
         # Создаем файл
         with open(self.chat_file, 'a', encoding='utf-8') as f:

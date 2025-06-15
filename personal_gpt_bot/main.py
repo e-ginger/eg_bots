@@ -489,9 +489,9 @@ def handle_voice(message):
         file_data = bot.download_file(file_info.file_path)
 
         os.makedirs("voice_messages", exist_ok=True)
-        timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
-        ogg_file_name = f"voice_messages/{timestamp}-{message.voice.file_unique_id}.ogg"
-        mp3_file_name = f"voice_messages/{timestamp}-{message.voice.file_unique_id}.mp3"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        ogg_file_name = f"voice_messages/{timestamp}_{message.voice.file_unique_id}.ogg"
+        mp3_file_name = f"voice_messages/{timestamp}_{message.voice.file_unique_id}.mp3"
 
         # Сохраняем оригинальный OGG файл
         with open(ogg_file_name, 'wb') as new_file:
