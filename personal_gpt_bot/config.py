@@ -12,10 +12,10 @@ class Config:
         "models_per_page": 5,
         "users": {
             "0": {
-                "name": "",
+                "name": "я",
                 "chats_dir": "./chats",
-                "models": ["ollama tinyllama"],
-                "model": "ollama tinyllama",
+                "models": ["dummy"],
+                "model": "dummy",
                 "max_context": 15
             }
         },
