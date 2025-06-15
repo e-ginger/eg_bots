@@ -1,0 +1,4 @@
+.idea/
+venv/
+inbox_bot/__pycache__/
+inbox_bot/settings.py
