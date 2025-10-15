@@ -41,13 +41,16 @@ def save_message(message):
     filefull = os.path.join(settings.IN_PATH, fname + '.md')
     # записываю заголовок
     if not os.path.exists(filefull):
-        content += '# \n'
-        content += 'id:: {}\n'.format(dtm.strftime('%Y%m%d%H%M%S'))
-        content += 'ctype:: #telegram\n'
-        content += '\n---\n'
+        content += '---\n'
+        content += 'created: {}\n'.format(dtm.strftime('%Y-%m-%dT%H:%M:%S'))
+        content += 'ctype: note\n'
+        content += 'up: []\n'
+        content += 'title: {}\n'.format(fname)
+        content += '---\n'
         reply += 'Создан [[{}]]\n'.format(fname)
     # отправитель
-    content += "\n**" + dtm.strftime('%Y-%m-%d %a %H:%M:%S').lower() + ". @" + tgmsg.user + ":**\n"
+    # content += "\n**" + dtm.strftime('%Y-%m-%d %a %H:%M:%S').lower() + ". @" + tgmsg.user + ":**\n"
+    content += "\n**@" + tgmsg.user + ":**\n"
     print(content)
     # текст
     if tgmsg.text:
